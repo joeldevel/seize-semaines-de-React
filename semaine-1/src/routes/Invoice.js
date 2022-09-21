@@ -19,6 +19,7 @@ export default function Invoice() {
                         deleteInvoice(invoice.number);
                         navigate("/invoices" + location.search);
                     }}
+                    className="button is-danger"
                 >
                     Delete
                 </button>

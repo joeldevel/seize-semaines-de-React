@@ -20,7 +20,12 @@ root.render(
                             index
                             element={
                                 <main style={{ padding: "1rem" }}>
-                                    <p>Select an invoice</p>
+                                    <div className="icon-text">
+                                        <span className="icon has-text-info">
+                                            <span className="fas fa-info-circle">ℹ️</span>
+                                        </span>
+                                        <span>Select an invoice</span>
+                                    </div>
                                 </main>
                             }
                         />
