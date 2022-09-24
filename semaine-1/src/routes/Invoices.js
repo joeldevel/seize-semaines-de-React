@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { NavLink, Outlet, useSearchParams } from "react-router-dom";
 import { getInvoices } from "../data";
 
 export default function Invoices() {
     let invoices = getInvoices();
+    let [modalVisible, setModalVisible] = useState(false);
     let [searchParams, setSearchParams] = useSearchParams();
 
     return (
@@ -12,7 +14,7 @@ export default function Invoices() {
                     borderRight: "solid 1px",
                     padding: "1rem",
                 }}
-            >
+            >   <label>search </label>
                 <input
                     value={searchParams.get("filter") || ""}
                     onChange={(event) => {
@@ -24,6 +26,8 @@ export default function Invoices() {
                         }
                     }}
                 />
+                
+                
                 {invoices
                     .filter((invoice) => {
                         let filter = searchParams.get("filter");

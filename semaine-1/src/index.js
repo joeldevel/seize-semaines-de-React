@@ -5,8 +5,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Expenses from "./routes/Expenses";
 import Invoices from "./routes/Invoices";
 import Invoice from "./routes/Invoice";
+import CreateInvoice from "./components/CreateInvoice";
 
 import App from "./App";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -31,6 +33,7 @@ root.render(
                         />
                         <Route path=":invoiceId" element={<Invoice />} />
                     </Route>
+                    <Route path="create" element={<CreateInvoice/>}></Route>
                     <Route
                         path="*"
                         element={

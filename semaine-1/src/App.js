@@ -1,4 +1,4 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 
 import 'bulma/css/bulma.min.css';
 
@@ -13,8 +13,9 @@ export default function App() {
           paddingBottom: "1rem",
         }}
       >
-        <Link to="/invoices" className="button is-primary is-light">Invoices</Link> {" "}
-        <Link to="/expenses"className="button is-secondary">Expenses</Link>
+        <NavLink to="/invoices" className={(navData) => (navData.isActive ? 'button is-primary' : 'button is-secondary')}>Invoices</NavLink> {" "}
+        <NavLink to="/create" className={(navData) => (navData.isActive ? 'button is-primary' : 'button is-secondary')}>create invoice</NavLink> {" "}
+        <NavLink to="/expenses" className={(navData) => (navData.isActive ? 'button is-primary' : 'button is-secondary')}>Expenses</NavLink>
       </nav>
       <Outlet/>
     </div>
